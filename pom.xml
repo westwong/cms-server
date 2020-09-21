@@ -9,7 +9,7 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.yunque</groupId>
+    <groupId>com.k2future</groupId>
     <artifactId>cms</artifactId>
     <version>1.0</version>
     <name>cms</name>

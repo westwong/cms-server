@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yunque.cms.core.gen.mapper.InformationMapper">
+<mapper namespace="com.k2future.cms.core.gen.mapper.InformationMapper">
 
-    <select id="customPage" resultType="com.yunque.cms.core.gen.entity.Information">
+    <select id="customPage" resultType="com.k2future.cms.core.gen.entity.Information">
         select distinct info.* from biz_tag bt, information info , information_tag it
         <where>
             bt.id = it.tag_id and info.id = it.information_id
