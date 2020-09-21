@@ -1,0 +1,49 @@
+server:
+  port: 9060
+
+
+spring:
+  application:
+    name: cms-server
+#  数据库相关
+  datasource:
+    url: jdbc:mysql://192.168.0.45:3306/cms?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  devtools:
+    restart:
+      exclude: static/**,**/*Test.class,**/*Tests.class
+  servlet:
+    multipart:
+        #请求的总文件大小
+      maxRequestSize: 50MB
+        #单个文件大小
+      maxFileSize: 10MB
+      # redis相关配置
+  redis:
+    host: 192.168.0.45
+    port: 6379
+#Oauth2相关
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://192.168.0.45:8080/clinic-oauth2/users/current
+    client:
+      client-id: clinic-client
+      client-secret: YunQue
+      access-token-uri: http://192.168.0.45:8080/clinic-oauth2/oauth/token
+      grant-type: client_credentials, password
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.0.45:12345/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
